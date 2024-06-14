@@ -28,12 +28,96 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "FrmCardapio";
+            foreverForm1 = new ReaLTaiizor.Forms.ForeverForm();
+            foreverGroupBox1 = new ReaLTaiizor.Controls.ForeverGroupBox();
+            btnVoltar = new ReaLTaiizor.Controls.ForeverButton();
+            fileSystemWatcher1 = new FileSystemWatcher();
+            foreverForm1.SuspendLayout();
+            foreverGroupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)fileSystemWatcher1).BeginInit();
+            SuspendLayout();
+            // 
+            // foreverForm1
+            // 
+            foreverForm1.BackColor = Color.White;
+            foreverForm1.BaseColor = Color.FromArgb(60, 70, 73);
+            foreverForm1.BorderColor = Color.DodgerBlue;
+            foreverForm1.Controls.Add(foreverGroupBox1);
+            foreverForm1.Dock = DockStyle.Fill;
+            foreverForm1.Font = new Font("Segoe UI", 12F);
+            foreverForm1.ForeverColor = Color.FromArgb(35, 168, 109);
+            foreverForm1.HeaderColor = Color.FromArgb(45, 47, 49);
+            foreverForm1.HeaderMaximize = false;
+            foreverForm1.HeaderTextFont = new Font("Segoe UI", 12F);
+            foreverForm1.Image = null;
+            foreverForm1.Location = new Point(0, 0);
+            foreverForm1.MinimumSize = new Size(210, 50);
+            foreverForm1.Name = "foreverForm1";
+            foreverForm1.Padding = new Padding(1, 51, 1, 1);
+            foreverForm1.Sizable = true;
+            foreverForm1.Size = new Size(800, 450);
+            foreverForm1.TabIndex = 0;
+            foreverForm1.Text = "Cardápio";
+            foreverForm1.TextColor = Color.FromArgb(234, 234, 234);
+            foreverForm1.TextLight = Color.SeaGreen;
+            // 
+            // foreverGroupBox1
+            // 
+            foreverGroupBox1.ArrowColorF = Color.Black;
+            foreverGroupBox1.ArrowColorH = Color.Black;
+            foreverGroupBox1.BackColor = Color.White;
+            foreverGroupBox1.BaseColor = Color.DimGray;
+            foreverGroupBox1.Controls.Add(btnVoltar);
+            foreverGroupBox1.Font = new Font("Segoe UI", 10F);
+            foreverGroupBox1.Location = new Point(12, 69);
+            foreverGroupBox1.Name = "foreverGroupBox1";
+            foreverGroupBox1.ShowArrow = true;
+            foreverGroupBox1.ShowText = true;
+            foreverGroupBox1.Size = new Size(776, 345);
+            foreverGroupBox1.TabIndex = 0;
+            foreverGroupBox1.TextColor = Color.FromArgb(35, 168, 109);
+            // 
+            // btnVoltar
+            // 
+            btnVoltar.BackColor = Color.Transparent;
+            btnVoltar.BaseColor = Color.Red;
+            btnVoltar.Font = new Font("Segoe UI", 12F);
+            btnVoltar.Location = new Point(680, 13);
+            btnVoltar.Name = "btnVoltar";
+            btnVoltar.Rounded = false;
+            btnVoltar.Size = new Size(77, 40);
+            btnVoltar.TabIndex = 0;
+            btnVoltar.Text = "Voltar";
+            btnVoltar.TextColor = Color.FromArgb(243, 243, 243);
+            btnVoltar.Click += btnVoltar_Click;
+            // 
+            // fileSystemWatcher1
+            // 
+            fileSystemWatcher1.EnableRaisingEvents = true;
+            fileSystemWatcher1.SynchronizingObject = this;
+            // 
+            // FrmCardapio
+            // 
+            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(foreverForm1);
+            FormBorderStyle = FormBorderStyle.None;
+            Name = "FrmCardapio";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "FrmCardapio";
+            TransparencyKey = Color.Fuchsia;
+            foreverForm1.ResumeLayout(false);
+            foreverGroupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)fileSystemWatcher1).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private ReaLTaiizor.Forms.ForeverForm foreverForm1;
+        private FileSystemWatcher fileSystemWatcher1;
+        private ReaLTaiizor.Controls.ForeverGroupBox foreverGroupBox1;
+        private ReaLTaiizor.Controls.ForeverButton btnVoltar;
     }
 }

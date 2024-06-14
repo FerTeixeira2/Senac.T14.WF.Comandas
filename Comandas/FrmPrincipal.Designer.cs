@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             gpxPrincipal = new GroupBox();
+            btnSair = new ReaLTaiizor.Controls.ForeverButtonSticky();
             btnUsuario = new ReaLTaiizor.Controls.MetroButton();
             btnComanda = new ReaLTaiizor.Controls.MetroButton();
             btnPedido = new ReaLTaiizor.Controls.MetroButton();
@@ -40,17 +41,34 @@
             // gpxPrincipal
             // 
             gpxPrincipal.BackColor = Color.DimGray;
+            gpxPrincipal.Controls.Add(btnSair);
             gpxPrincipal.Controls.Add(btnUsuario);
             gpxPrincipal.Controls.Add(btnComanda);
             gpxPrincipal.Controls.Add(btnPedido);
             gpxPrincipal.Controls.Add(btnCardapio);
             gpxPrincipal.ForeColor = SystemColors.ControlText;
-            gpxPrincipal.Location = new Point(12, 50);
+            gpxPrincipal.Location = new Point(12, 64);
             gpxPrincipal.MinimumSize = new Size(261, 65);
             gpxPrincipal.Name = "gpxPrincipal";
-            gpxPrincipal.Size = new Size(776, 368);
+            gpxPrincipal.Size = new Size(776, 363);
             gpxPrincipal.TabIndex = 0;
             gpxPrincipal.TabStop = false;
+            gpxPrincipal.UseWaitCursor = true;
+            // 
+            // btnSair
+            // 
+            btnSair.BackColor = Color.Transparent;
+            btnSair.BaseColor = Color.Red;
+            btnSair.Font = new Font("Segoe UI", 12F);
+            btnSair.Location = new Point(716, 18);
+            btnSair.Name = "btnSair";
+            btnSair.Rounded = false;
+            btnSair.Size = new Size(54, 32);
+            btnSair.TabIndex = 4;
+            btnSair.Text = "Sair";
+            btnSair.TextColor = Color.FromArgb(243, 243, 243);
+            btnSair.UseWaitCursor = true;
+            btnSair.Click += btnSair_Click;
             // 
             // btnUsuario
             // 
@@ -77,6 +95,7 @@
             btnUsuario.Text = "Usuários";
             btnUsuario.ThemeAuthor = "Taiizor";
             btnUsuario.ThemeName = "MetroLight";
+            btnUsuario.UseWaitCursor = true;
             btnUsuario.Click += btnUsuario_Click;
             // 
             // btnComanda
@@ -104,6 +123,7 @@
             btnComanda.Text = "Comanda";
             btnComanda.ThemeAuthor = "Taiizor";
             btnComanda.ThemeName = "MetroLight";
+            btnComanda.UseWaitCursor = true;
             btnComanda.Click += btnComanda_Click;
             // 
             // btnPedido
@@ -131,6 +151,7 @@
             btnPedido.Text = "Pedido Cozinha";
             btnPedido.ThemeAuthor = "Taiizor";
             btnPedido.ThemeName = "MetroLight";
+            btnPedido.UseWaitCursor = true;
             btnPedido.Click += btnPedido_Click;
             // 
             // btnCardapio
@@ -158,6 +179,7 @@
             btnCardapio.Text = "Cardápio";
             btnCardapio.ThemeAuthor = "Taiizor";
             btnCardapio.ThemeName = "MetroLight";
+            btnCardapio.UseWaitCursor = true;
             btnCardapio.Click += btnCardapio_Click;
             // 
             // Principal
@@ -179,7 +201,7 @@
             Principal.Sizable = true;
             Principal.Size = new Size(800, 450);
             Principal.TabIndex = 1;
-            Principal.Text = "Tela principal";
+            Principal.Text = "Sistema de comandas";
             Principal.TextColor = Color.FromArgb(234, 234, 234);
             Principal.TextLight = Color.SeaGreen;
             // 
@@ -207,5 +229,6 @@
         private ReaLTaiizor.Controls.MetroButton btnPedido;
         private ReaLTaiizor.Controls.MetroButton btnCardapio;
         private ReaLTaiizor.Forms.ForeverForm Principal;
+        private ReaLTaiizor.Controls.ForeverButtonSticky btnSair;
     }
 }

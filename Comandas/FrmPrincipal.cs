@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace Comandas
 {
@@ -15,6 +7,21 @@ namespace Comandas
         public FrmPrincipal()
         {
             InitializeComponent();
+            CriarBancoDeDados();
+        }
+
+        //metodo (visibilidade=private, retorno=void, nome)
+        private void CriarBancoDeDados()
+        {
+            //criar uma variavel do tipo AppDbContext
+            //usar a variavel e acessar o contexto
+            //executar a migração == F5
+
+            using (var banco = new AppDbContext())
+            {
+                //executar a migração
+                banco.Database.Migrate();
+            }
         }
 
         private void btnCardapio_Click(object sender, EventArgs e)

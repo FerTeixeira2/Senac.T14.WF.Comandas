@@ -53,7 +53,7 @@
             formUsuario.Name = "formUsuario";
             formUsuario.Padding = new Padding(1, 51, 1, 1);
             formUsuario.Sizable = true;
-            formUsuario.Size = new Size(800, 450);
+            formUsuario.Size = new Size(808, 451);
             formUsuario.TabIndex = 0;
             formUsuario.Text = "Usuário";
             formUsuario.TextColor = Color.FromArgb(234, 234, 234);
@@ -93,7 +93,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(808, 451);
             Controls.Add(formUsuario);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FrmUsuario";

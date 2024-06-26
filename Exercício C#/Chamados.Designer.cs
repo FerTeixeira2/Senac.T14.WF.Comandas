@@ -57,7 +57,7 @@
             BtnVoltar.Lighting = false;
             BtnVoltar.LinearGradient_Background = false;
             BtnVoltar.LinearGradientPen = false;
-            BtnVoltar.Location = new Point(685, 12);
+            BtnVoltar.Location = new Point(673, 12);
             BtnVoltar.Name = "BtnVoltar";
             BtnVoltar.PenWidth = 15;
             BtnVoltar.Rounding = true;

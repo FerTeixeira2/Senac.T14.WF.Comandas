@@ -30,6 +30,10 @@
         {
             formUsuario = new ReaLTaiizor.Forms.ForeverForm();
             gpxUsuario = new ReaLTaiizor.Controls.ForeverGroupBox();
+            btnCancelar = new ReaLTaiizor.Controls.ForeverButtonSticky();
+            btnExcluir = new ReaLTaiizor.Controls.ForeverButtonSticky();
+            btnNovo = new ReaLTaiizor.Controls.ForeverButtonSticky();
+            btnSalvar = new ReaLTaiizor.Controls.ForeverButtonSticky();
             btnVoltar = new ReaLTaiizor.Controls.ForeverButtonSticky();
             formUsuario.SuspendLayout();
             gpxUsuario.SuspendLayout();
@@ -65,6 +69,10 @@
             gpxUsuario.ArrowColorH = Color.Black;
             gpxUsuario.BackColor = Color.White;
             gpxUsuario.BaseColor = Color.DimGray;
+            gpxUsuario.Controls.Add(btnCancelar);
+            gpxUsuario.Controls.Add(btnExcluir);
+            gpxUsuario.Controls.Add(btnNovo);
+            gpxUsuario.Controls.Add(btnSalvar);
             gpxUsuario.Controls.Add(btnVoltar);
             gpxUsuario.Font = new Font("Segoe UI", 10F);
             gpxUsuario.Location = new Point(12, 72);
@@ -75,12 +83,66 @@
             gpxUsuario.TabIndex = 0;
             gpxUsuario.TextColor = Color.FromArgb(35, 168, 109);
             // 
+            // btnCancelar
+            // 
+            btnCancelar.BackColor = Color.Transparent;
+            btnCancelar.BaseColor = Color.DarkCyan;
+            btnCancelar.Font = new Font("Segoe UI", 12F);
+            btnCancelar.Location = new Point(576, 122);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Rounded = false;
+            btnCancelar.Size = new Size(139, 89);
+            btnCancelar.TabIndex = 4;
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.TextColor = Color.FromArgb(243, 243, 243);
+            // 
+            // btnExcluir
+            // 
+            btnExcluir.BackColor = Color.Transparent;
+            btnExcluir.BaseColor = Color.DarkCyan;
+            btnExcluir.Font = new Font("Segoe UI", 12F);
+            btnExcluir.Location = new Point(398, 122);
+            btnExcluir.Name = "btnExcluir";
+            btnExcluir.Rounded = false;
+            btnExcluir.Size = new Size(138, 89);
+            btnExcluir.TabIndex = 3;
+            btnExcluir.Text = "Excluir";
+            btnExcluir.TextColor = Color.FromArgb(243, 243, 243);
+            // 
+            // btnNovo
+            // 
+            btnNovo.BackColor = Color.Transparent;
+            btnNovo.BaseColor = Color.DarkCyan;
+            btnNovo.Font = new Font("Segoe UI", 12F);
+            btnNovo.Location = new Point(32, 122);
+            btnNovo.Name = "btnNovo";
+            btnNovo.Rounded = false;
+            btnNovo.Size = new Size(155, 87);
+            btnNovo.TabIndex = 2;
+            btnNovo.Text = "Novo";
+            btnNovo.TextColor = Color.FromArgb(243, 243, 243);
+            btnNovo.Click += btnNovo_Click;
+            // 
+            // btnSalvar
+            // 
+            btnSalvar.BackColor = Color.Transparent;
+            btnSalvar.BaseColor = Color.DarkCyan;
+            btnSalvar.Font = new Font("Segoe UI", 12F);
+            btnSalvar.Location = new Point(215, 122);
+            btnSalvar.Name = "btnSalvar";
+            btnSalvar.Rounded = false;
+            btnSalvar.Size = new Size(145, 89);
+            btnSalvar.TabIndex = 1;
+            btnSalvar.Text = "Salvar";
+            btnSalvar.TextColor = Color.FromArgb(243, 243, 243);
+            btnSalvar.Click += btnSalvar_Click;
+            // 
             // btnVoltar
             // 
             btnVoltar.BackColor = Color.Transparent;
             btnVoltar.BaseColor = Color.Red;
             btnVoltar.Font = new Font("Segoe UI", 12F);
-            btnVoltar.Location = new Point(668, 17);
+            btnVoltar.Location = new Point(667, 16);
             btnVoltar.Name = "btnVoltar";
             btnVoltar.Rounded = false;
             btnVoltar.Size = new Size(76, 31);
@@ -110,5 +172,9 @@
         private ReaLTaiizor.Forms.ForeverForm formUsuario;
         private ReaLTaiizor.Controls.ForeverGroupBox gpxUsuario;
         private ReaLTaiizor.Controls.ForeverButtonSticky btnVoltar;
+        private ReaLTaiizor.Controls.ForeverButtonSticky btnCancelar;
+        private ReaLTaiizor.Controls.ForeverButtonSticky btnExcluir;
+        private ReaLTaiizor.Controls.ForeverButtonSticky btnNovo;
+        private ReaLTaiizor.Controls.ForeverButtonSticky btnSalvar;
     }
 }

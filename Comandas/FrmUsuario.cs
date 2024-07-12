@@ -37,13 +37,15 @@ namespace Comandas
         private void AtualizarUsuario()
         {
             using (var banco = new AppDbContext())
-            {
+            {   
+                //consulta um usuario na tabela usando o id da tela
                 var usuario = banco
                     .Usuarios
-                    .Where(e => e.Id == 1)
+                    .Where(e => e.Id == int.Parse(txtId.Text) )
                     .FirstOrDefault();
-                usuario.Name = "João";
-                usuario.Email = "jo@jo.com";
+                usuario.Name = txtNome.Text;
+                usuario.Email = txtEmail.Text;
+                usuario.Password = txtSenha.Text; 
                 banco.SaveChanges();
             }
         }
@@ -56,9 +58,9 @@ namespace Comandas
                 //criar um novo usuário
                 var novoUsuario = new Usuario();
                 //atribuimos as propriedades do usuário.
-                novoUsuario.Name = "Fernando";
-                novoUsuario.Email = "fe@fer.com";
-                novoUsuario.Password = "123";
+                novoUsuario.Name = txtNome.Text;
+                novoUsuario.Email = txtEmail.Text;
+                novoUsuario.Password = txtSenha.Text;
 
                 //salvar as alterações(INSERT INTO usuario)
                 banco.Usuarios.Add(novoUsuario);

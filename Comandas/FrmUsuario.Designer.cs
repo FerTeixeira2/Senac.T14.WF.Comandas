@@ -30,6 +30,15 @@
         {
             formUsuario = new ReaLTaiizor.Forms.ForeverForm();
             gpxUsuario = new ReaLTaiizor.Controls.ForeverGroupBox();
+            gpx = new ReaLTaiizor.Controls.ForeverGroupBox();
+            labelSenha = new ReaLTaiizor.Controls.ForeverLabel();
+            txtSenha = new ReaLTaiizor.Controls.ForeverTextBox();
+            labelEmail = new ReaLTaiizor.Controls.ForeverLabel();
+            labelNome = new ReaLTaiizor.Controls.ForeverLabel();
+            labelId = new ReaLTaiizor.Controls.ForeverLabel();
+            txtEmail = new ReaLTaiizor.Controls.ForeverTextBox();
+            txtNome = new ReaLTaiizor.Controls.ForeverTextBox();
+            txtId = new ReaLTaiizor.Controls.ForeverTextBox();
             btnCancelar = new ReaLTaiizor.Controls.ForeverButtonSticky();
             btnExcluir = new ReaLTaiizor.Controls.ForeverButtonSticky();
             btnNovo = new ReaLTaiizor.Controls.ForeverButtonSticky();
@@ -37,6 +46,7 @@
             btnVoltar = new ReaLTaiizor.Controls.ForeverButtonSticky();
             formUsuario.SuspendLayout();
             gpxUsuario.SuspendLayout();
+            gpx.SuspendLayout();
             SuspendLayout();
             // 
             // formUsuario
@@ -47,7 +57,7 @@
             formUsuario.Controls.Add(gpxUsuario);
             formUsuario.Dock = DockStyle.Fill;
             formUsuario.Font = new Font("Segoe UI", 12F);
-            formUsuario.ForeverColor = Color.FromArgb(35, 168, 109);
+            formUsuario.ForeverColor = Color.Lime;
             formUsuario.HeaderColor = Color.FromArgb(45, 47, 49);
             formUsuario.HeaderMaximize = false;
             formUsuario.HeaderTextFont = new Font("Segoe UI", 12F);
@@ -69,26 +79,168 @@
             gpxUsuario.ArrowColorH = Color.Black;
             gpxUsuario.BackColor = Color.White;
             gpxUsuario.BaseColor = Color.DimGray;
+            gpxUsuario.Controls.Add(gpx);
             gpxUsuario.Controls.Add(btnCancelar);
             gpxUsuario.Controls.Add(btnExcluir);
             gpxUsuario.Controls.Add(btnNovo);
             gpxUsuario.Controls.Add(btnSalvar);
             gpxUsuario.Controls.Add(btnVoltar);
             gpxUsuario.Font = new Font("Segoe UI", 10F);
-            gpxUsuario.Location = new Point(12, 72);
+            gpxUsuario.Location = new Point(12, 49);
             gpxUsuario.Name = "gpxUsuario";
             gpxUsuario.ShowArrow = true;
             gpxUsuario.ShowText = true;
-            gpxUsuario.Size = new Size(765, 350);
+            gpxUsuario.Size = new Size(784, 390);
             gpxUsuario.TabIndex = 0;
             gpxUsuario.TextColor = Color.FromArgb(35, 168, 109);
+            // 
+            // gpx
+            // 
+            gpx.ArrowColorF = Color.FromArgb(60, 70, 73);
+            gpx.ArrowColorH = Color.FromArgb(60, 70, 73);
+            gpx.BackColor = Color.Transparent;
+            gpx.BaseColor = Color.FromArgb(60, 70, 73);
+            gpx.Controls.Add(labelSenha);
+            gpx.Controls.Add(txtSenha);
+            gpx.Controls.Add(labelEmail);
+            gpx.Controls.Add(labelNome);
+            gpx.Controls.Add(labelId);
+            gpx.Controls.Add(txtEmail);
+            gpx.Controls.Add(txtNome);
+            gpx.Controls.Add(txtId);
+            gpx.Font = new Font("Segoe UI", 10F);
+            gpx.Location = new Point(15, 47);
+            gpx.Name = "gpx";
+            gpx.ShowArrow = true;
+            gpx.ShowText = true;
+            gpx.Size = new Size(749, 228);
+            gpx.TabIndex = 5;
+            gpx.TextColor = Color.FromArgb(35, 168, 109);
+            // 
+            // labelSenha
+            // 
+            labelSenha.AutoSize = true;
+            labelSenha.BackColor = Color.Transparent;
+            labelSenha.Font = new Font("Segoe UI", 8F);
+            labelSenha.ForeColor = Color.LightGray;
+            labelSenha.Location = new Point(23, 183);
+            labelSenha.Name = "labelSenha";
+            labelSenha.Size = new Size(53, 21);
+            labelSenha.TabIndex = 7;
+            labelSenha.Text = "Senha";
+            // 
+            // txtSenha
+            // 
+            txtSenha.BackColor = Color.Transparent;
+            txtSenha.BaseColor = Color.FromArgb(45, 47, 49);
+            txtSenha.BorderColor = Color.FromArgb(35, 168, 109);
+            txtSenha.FocusOnHover = false;
+            txtSenha.ForeColor = Color.FromArgb(192, 192, 192);
+            txtSenha.Location = new Point(99, 173);
+            txtSenha.MaxLength = 32767;
+            txtSenha.Multiline = false;
+            txtSenha.Name = "txtSenha";
+            txtSenha.ReadOnly = false;
+            txtSenha.Size = new Size(629, 38);
+            txtSenha.TabIndex = 6;
+            txtSenha.TextAlign = HorizontalAlignment.Left;
+            txtSenha.UseSystemPasswordChar = false;
+            // 
+            // labelEmail
+            // 
+            labelEmail.AutoSize = true;
+            labelEmail.BackColor = Color.Transparent;
+            labelEmail.Font = new Font("Segoe UI", 8F);
+            labelEmail.ForeColor = Color.LightGray;
+            labelEmail.Location = new Point(21, 134);
+            labelEmail.Name = "labelEmail";
+            labelEmail.Size = new Size(54, 21);
+            labelEmail.TabIndex = 5;
+            labelEmail.Text = "E-Mail";
+            // 
+            // labelNome
+            // 
+            labelNome.AutoSize = true;
+            labelNome.BackColor = Color.Transparent;
+            labelNome.Font = new Font("Segoe UI", 8F);
+            labelNome.ForeColor = Color.LightGray;
+            labelNome.Location = new Point(21, 81);
+            labelNome.Name = "labelNome";
+            labelNome.Size = new Size(53, 21);
+            labelNome.TabIndex = 4;
+            labelNome.Text = "Nome";
+            // 
+            // labelId
+            // 
+            labelId.AutoSize = true;
+            labelId.BackColor = Color.Transparent;
+            labelId.Font = new Font("Segoe UI", 8F);
+            labelId.ForeColor = Color.LightGray;
+            labelId.Location = new Point(35, 30);
+            labelId.Name = "labelId";
+            labelId.Size = new Size(25, 21);
+            labelId.TabIndex = 3;
+            labelId.Text = "ID";
+            // 
+            // txtEmail
+            // 
+            txtEmail.BackColor = Color.Transparent;
+            txtEmail.BaseColor = Color.FromArgb(45, 47, 49);
+            txtEmail.BorderColor = Color.FromArgb(35, 168, 109);
+            txtEmail.FocusOnHover = false;
+            txtEmail.ForeColor = Color.FromArgb(192, 192, 192);
+            txtEmail.Location = new Point(99, 124);
+            txtEmail.MaxLength = 32767;
+            txtEmail.Multiline = false;
+            txtEmail.Name = "txtEmail";
+            txtEmail.ReadOnly = false;
+            txtEmail.Size = new Size(629, 38);
+            txtEmail.TabIndex = 2;
+            txtEmail.TextAlign = HorizontalAlignment.Left;
+            txtEmail.UseSystemPasswordChar = false;
+            // 
+            // txtNome
+            // 
+            txtNome.BackColor = Color.Transparent;
+            txtNome.BaseColor = Color.FromArgb(45, 47, 49);
+            txtNome.BorderColor = Color.FromArgb(35, 168, 109);
+            txtNome.FocusOnHover = false;
+            txtNome.ForeColor = Color.FromArgb(192, 192, 192);
+            txtNome.Location = new Point(99, 71);
+            txtNome.MaxLength = 32767;
+            txtNome.Multiline = false;
+            txtNome.Name = "txtNome";
+            txtNome.ReadOnly = false;
+            txtNome.Size = new Size(629, 38);
+            txtNome.TabIndex = 1;
+            txtNome.TextAlign = HorizontalAlignment.Left;
+            txtNome.UseSystemPasswordChar = false;
+            // 
+            // txtId
+            // 
+            txtId.BackColor = Color.Transparent;
+            txtId.BaseColor = Color.FromArgb(45, 47, 49);
+            txtId.BorderColor = Color.FromArgb(35, 168, 109);
+            txtId.Enabled = false;
+            txtId.FocusOnHover = false;
+            txtId.ForeColor = Color.FromArgb(192, 192, 192);
+            txtId.Location = new Point(99, 20);
+            txtId.MaxLength = 32767;
+            txtId.Multiline = false;
+            txtId.Name = "txtId";
+            txtId.ReadOnly = false;
+            txtId.Size = new Size(629, 38);
+            txtId.TabIndex = 0;
+            txtId.Text = "1";
+            txtId.TextAlign = HorizontalAlignment.Left;
+            txtId.UseSystemPasswordChar = false;
             // 
             // btnCancelar
             // 
             btnCancelar.BackColor = Color.Transparent;
-            btnCancelar.BaseColor = Color.DarkCyan;
+            btnCancelar.BaseColor = Color.Teal;
             btnCancelar.Font = new Font("Segoe UI", 12F);
-            btnCancelar.Location = new Point(576, 122);
+            btnCancelar.Location = new Point(590, 273);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Rounded = false;
             btnCancelar.Size = new Size(139, 89);
@@ -99,9 +251,9 @@
             // btnExcluir
             // 
             btnExcluir.BackColor = Color.Transparent;
-            btnExcluir.BaseColor = Color.DarkCyan;
+            btnExcluir.BaseColor = Color.Teal;
             btnExcluir.Font = new Font("Segoe UI", 12F);
-            btnExcluir.Location = new Point(398, 122);
+            btnExcluir.Location = new Point(416, 273);
             btnExcluir.Name = "btnExcluir";
             btnExcluir.Rounded = false;
             btnExcluir.Size = new Size(138, 89);
@@ -112,12 +264,12 @@
             // btnNovo
             // 
             btnNovo.BackColor = Color.Transparent;
-            btnNovo.BaseColor = Color.DarkCyan;
+            btnNovo.BaseColor = Color.Teal;
             btnNovo.Font = new Font("Segoe UI", 12F);
-            btnNovo.Location = new Point(32, 122);
+            btnNovo.Location = new Point(47, 276);
             btnNovo.Name = "btnNovo";
             btnNovo.Rounded = false;
-            btnNovo.Size = new Size(155, 87);
+            btnNovo.Size = new Size(149, 87);
             btnNovo.TabIndex = 2;
             btnNovo.Text = "Novo";
             btnNovo.TextColor = Color.FromArgb(243, 243, 243);
@@ -126,9 +278,9 @@
             // btnSalvar
             // 
             btnSalvar.BackColor = Color.Transparent;
-            btnSalvar.BaseColor = Color.DarkCyan;
+            btnSalvar.BaseColor = Color.Teal;
             btnSalvar.Font = new Font("Segoe UI", 12F);
-            btnSalvar.Location = new Point(215, 122);
+            btnSalvar.Location = new Point(231, 273);
             btnSalvar.Name = "btnSalvar";
             btnSalvar.Rounded = false;
             btnSalvar.Size = new Size(145, 89);
@@ -164,6 +316,8 @@
             TransparencyKey = Color.Fuchsia;
             formUsuario.ResumeLayout(false);
             gpxUsuario.ResumeLayout(false);
+            gpx.ResumeLayout(false);
+            gpx.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -176,5 +330,14 @@
         private ReaLTaiizor.Controls.ForeverButtonSticky btnExcluir;
         private ReaLTaiizor.Controls.ForeverButtonSticky btnNovo;
         private ReaLTaiizor.Controls.ForeverButtonSticky btnSalvar;
+        private ReaLTaiizor.Controls.ForeverGroupBox gpx;
+        private ReaLTaiizor.Controls.ForeverTextBox txtEmail;
+        private ReaLTaiizor.Controls.ForeverTextBox txtNome;
+        private ReaLTaiizor.Controls.ForeverTextBox txtId;
+        private ReaLTaiizor.Controls.ForeverLabel labelEmail;
+        private ReaLTaiizor.Controls.ForeverLabel labelNome;
+        private ReaLTaiizor.Controls.ForeverLabel labelId;
+        private ReaLTaiizor.Controls.ForeverLabel labelSenha;
+        private ReaLTaiizor.Controls.ForeverTextBox txtSenha;
     }
 }

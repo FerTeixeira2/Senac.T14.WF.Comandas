@@ -18,6 +18,20 @@ namespace Comandas
         public FrmUsuario()
         {
             InitializeComponent();
+            //metodo que lista os usuarios
+            ListarUsuarios();
+        }
+
+        private void ListarUsuarios()
+        {
+            //1.conectar no banco
+            using (var banco = new AppDbContext())
+            {
+                //2.converteu os usuarios cadastrados em um lista e armazenou = SELECT * FROM usuarios
+                var usuarios = banco.Usuarios.ToList();
+                //3.popular a tabela na tela DataGridViews
+                dgvUsuarios.DataSource = usuarios;
+            }
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
@@ -37,15 +51,15 @@ namespace Comandas
         private void AtualizarUsuario()
         {
             using (var banco = new AppDbContext())
-            {   
+            {
                 //consulta um usuario na tabela usando o id da tela
                 var usuario = banco
                     .Usuarios
-                    .Where(e => e.Id == int.Parse(txtId.Text) )
+                    .Where(e => e.Id == int.Parse(txtId.Text))
                     .FirstOrDefault();
                 usuario.Name = txtNome.Text;
                 usuario.Email = txtEmail.Text;
-                usuario.Password = txtSenha.Text; 
+                usuario.Password = txtSenha.Text;
                 banco.SaveChanges();
             }
         }

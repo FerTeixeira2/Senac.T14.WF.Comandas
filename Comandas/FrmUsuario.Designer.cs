@@ -44,9 +44,11 @@
             btnNovo = new ReaLTaiizor.Controls.ForeverButtonSticky();
             btnSalvar = new ReaLTaiizor.Controls.ForeverButtonSticky();
             btnVoltar = new ReaLTaiizor.Controls.ForeverButtonSticky();
+            dgvUsuarios = new DataGridView();
             formUsuario.SuspendLayout();
             gpxUsuario.SuspendLayout();
             gpx.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvUsuarios).BeginInit();
             SuspendLayout();
             // 
             // formUsuario
@@ -55,6 +57,7 @@
             formUsuario.BaseColor = Color.FromArgb(60, 70, 73);
             formUsuario.BorderColor = Color.DodgerBlue;
             formUsuario.Controls.Add(gpxUsuario);
+            formUsuario.Controls.Add(btnVoltar);
             formUsuario.Dock = DockStyle.Fill;
             formUsuario.Font = new Font("Segoe UI", 12F);
             formUsuario.ForeverColor = Color.Lime;
@@ -79,18 +82,18 @@
             gpxUsuario.ArrowColorH = Color.Black;
             gpxUsuario.BackColor = Color.White;
             gpxUsuario.BaseColor = Color.DimGray;
+            gpxUsuario.Controls.Add(dgvUsuarios);
             gpxUsuario.Controls.Add(gpx);
             gpxUsuario.Controls.Add(btnCancelar);
             gpxUsuario.Controls.Add(btnExcluir);
             gpxUsuario.Controls.Add(btnNovo);
             gpxUsuario.Controls.Add(btnSalvar);
-            gpxUsuario.Controls.Add(btnVoltar);
             gpxUsuario.Font = new Font("Segoe UI", 10F);
             gpxUsuario.Location = new Point(12, 49);
             gpxUsuario.Name = "gpxUsuario";
             gpxUsuario.ShowArrow = true;
             gpxUsuario.ShowText = true;
-            gpxUsuario.Size = new Size(784, 390);
+            gpxUsuario.Size = new Size(784, 398);
             gpxUsuario.TabIndex = 0;
             gpxUsuario.TextColor = Color.FromArgb(35, 168, 109);
             // 
@@ -109,7 +112,7 @@
             gpx.Controls.Add(txtNome);
             gpx.Controls.Add(txtId);
             gpx.Font = new Font("Segoe UI", 10F);
-            gpx.Location = new Point(15, 47);
+            gpx.Location = new Point(15, 0);
             gpx.Name = "gpx";
             gpx.ShowArrow = true;
             gpx.ShowText = true;
@@ -240,10 +243,10 @@
             btnCancelar.BackColor = Color.Transparent;
             btnCancelar.BaseColor = Color.Teal;
             btnCancelar.Font = new Font("Segoe UI", 12F);
-            btnCancelar.Location = new Point(590, 273);
+            btnCancelar.Location = new Point(604, 228);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Rounded = false;
-            btnCancelar.Size = new Size(139, 89);
+            btnCancelar.Size = new Size(139, 44);
             btnCancelar.TabIndex = 4;
             btnCancelar.Text = "Cancelar";
             btnCancelar.TextColor = Color.FromArgb(243, 243, 243);
@@ -253,10 +256,10 @@
             btnExcluir.BackColor = Color.Transparent;
             btnExcluir.BaseColor = Color.Teal;
             btnExcluir.Font = new Font("Segoe UI", 12F);
-            btnExcluir.Location = new Point(416, 273);
+            btnExcluir.Location = new Point(417, 228);
             btnExcluir.Name = "btnExcluir";
             btnExcluir.Rounded = false;
-            btnExcluir.Size = new Size(138, 89);
+            btnExcluir.Size = new Size(158, 44);
             btnExcluir.TabIndex = 3;
             btnExcluir.Text = "Excluir";
             btnExcluir.TextColor = Color.FromArgb(243, 243, 243);
@@ -266,10 +269,10 @@
             btnNovo.BackColor = Color.Transparent;
             btnNovo.BaseColor = Color.Teal;
             btnNovo.Font = new Font("Segoe UI", 12F);
-            btnNovo.Location = new Point(47, 276);
+            btnNovo.Location = new Point(40, 228);
             btnNovo.Name = "btnNovo";
             btnNovo.Rounded = false;
-            btnNovo.Size = new Size(149, 87);
+            btnNovo.Size = new Size(160, 44);
             btnNovo.TabIndex = 2;
             btnNovo.Text = "Novo";
             btnNovo.TextColor = Color.FromArgb(243, 243, 243);
@@ -280,10 +283,10 @@
             btnSalvar.BackColor = Color.Transparent;
             btnSalvar.BaseColor = Color.Teal;
             btnSalvar.Font = new Font("Segoe UI", 12F);
-            btnSalvar.Location = new Point(231, 273);
+            btnSalvar.Location = new Point(230, 228);
             btnSalvar.Name = "btnSalvar";
             btnSalvar.Rounded = false;
-            btnSalvar.Size = new Size(145, 89);
+            btnSalvar.Size = new Size(153, 44);
             btnSalvar.TabIndex = 1;
             btnSalvar.Text = "Salvar";
             btnSalvar.TextColor = Color.FromArgb(243, 243, 243);
@@ -294,7 +297,7 @@
             btnVoltar.BackColor = Color.Transparent;
             btnVoltar.BaseColor = Color.Red;
             btnVoltar.Font = new Font("Segoe UI", 12F);
-            btnVoltar.Location = new Point(667, 16);
+            btnVoltar.Location = new Point(700, 12);
             btnVoltar.Name = "btnVoltar";
             btnVoltar.Rounded = false;
             btnVoltar.Size = new Size(76, 31);
@@ -302,6 +305,17 @@
             btnVoltar.Text = "Voltar";
             btnVoltar.TextColor = Color.FromArgb(243, 243, 243);
             btnVoltar.Click += btnVoltar_Click;
+            // 
+            // dgvUsuarios
+            // 
+            dgvUsuarios.BackgroundColor = Color.DarkGray;
+            dgvUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvUsuarios.GridColor = Color.LightSlateGray;
+            dgvUsuarios.Location = new Point(36, 278);
+            dgvUsuarios.Name = "dgvUsuarios";
+            dgvUsuarios.RowHeadersWidth = 62;
+            dgvUsuarios.Size = new Size(707, 98);
+            dgvUsuarios.TabIndex = 6;
             // 
             // FrmUsuario
             // 
@@ -318,6 +332,7 @@
             gpxUsuario.ResumeLayout(false);
             gpx.ResumeLayout(false);
             gpx.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvUsuarios).EndInit();
             ResumeLayout(false);
         }
 
@@ -339,5 +354,6 @@
         private ReaLTaiizor.Controls.ForeverLabel labelId;
         private ReaLTaiizor.Controls.ForeverLabel labelSenha;
         private ReaLTaiizor.Controls.ForeverTextBox txtSenha;
+        private DataGridView dgvUsuarios;
     }
 }

@@ -46,10 +46,24 @@ namespace Comandas
                 CriarUsuario();
             else
                 AtualizarUsuario();
+
+            desabilitarCampos();
+            ListarUsuarios();
+            limparCampos();
+        }
+
+
+        private void limparCampos()
+        {
+            txtId.Text = string.Empty;
+            txtSenha.Text = string.Empty;
+            txtEmail.Text = string.Empty;
+            txtNome.Text = string.Empty;
         }
 
         private void AtualizarUsuario()
         {
+            //consulta um usuario na tabela usando o ID da tela
             using (var banco = new AppDbContext())
             {
                 //consulta um usuario na tabela usando o id da tela
@@ -86,6 +100,67 @@ namespace Comandas
         private void btnNovo_Click(object sender, EventArgs e)
         {
             ehNovo = true;
+            habilitarCampos();
+        }
+
+        private void habilitarCampos()
+        {
+            txtNome.Enabled = true;
+            txtEmail.Enabled = true;
+            txtSenha.Enabled = true;
+        }
+
+        private void desabilitarCampos()
+        {
+            txtNome.Enabled = false;
+            txtEmail.Enabled = false;
+            txtSenha.Enabled = false;
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            //indica que esta editando um usuario
+            ehNovo = false;
+            habilitarCampos();
+        }
+
+        private void FrmUsuario_Load(object sender, EventArgs e)
+        {
+            CarregarUsuarios();
+        }
+
+        private void CarregarUsuarios()
+        {
+            //conectar no banco
+            using (var banco = new AppDbContext())
+            {
+                //realizar a consulta na tabela usuarios
+                var usuarios = banco.Usuarios.ToList();
+                //popular os dados do grid(dataGridViews)
+                dgvUsuarios.DataSource = usuarios;
+            }
+        }
+
+        private void dgvUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //verrifica se o indice da linha eh maior ou igual a 0
+            //saber se existe uma linha selecionada 
+            if(e.RowIndex >= 0)
+            {
+                //mensagem "Linha selecionada 1"
+                //MessageBox.Show("Linha selecionada " + (e.RowIndex + 1));
+
+                //obter dados da linha
+                var id = dgvUsuarios.Rows[e.RowIndex].Cells["id"].Value.ToString();
+                var nome = dgvUsuarios.Rows[e.RowIndex].Cells["Name"].Value.ToString();
+                var email = dgvUsuarios.Rows[e.RowIndex].Cells["Email"].Value.ToString();
+                var senha = dgvUsuarios.Rows[e.RowIndex].Cells["Password"].Value.ToString();
+
+                txtId.Text = id;
+                txtNome.Text = nome;
+                txtEmail.Text = email;
+                txtSenha.Text = senha;
+            }
         }
     }
 }

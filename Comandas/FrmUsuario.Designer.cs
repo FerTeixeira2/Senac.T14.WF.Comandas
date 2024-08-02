@@ -30,6 +30,8 @@
         {
             formUsuario = new ReaLTaiizor.Forms.ForeverForm();
             gpxUsuario = new ReaLTaiizor.Controls.ForeverGroupBox();
+            btnEditar = new ReaLTaiizor.Controls.ForeverButtonSticky();
+            dgvUsuarios = new DataGridView();
             gpx = new ReaLTaiizor.Controls.ForeverGroupBox();
             labelSenha = new ReaLTaiizor.Controls.ForeverLabel();
             txtSenha = new ReaLTaiizor.Controls.ForeverTextBox();
@@ -44,11 +46,10 @@
             btnNovo = new ReaLTaiizor.Controls.ForeverButtonSticky();
             btnSalvar = new ReaLTaiizor.Controls.ForeverButtonSticky();
             btnVoltar = new ReaLTaiizor.Controls.ForeverButtonSticky();
-            dgvUsuarios = new DataGridView();
             formUsuario.SuspendLayout();
             gpxUsuario.SuspendLayout();
-            gpx.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvUsuarios).BeginInit();
+            gpx.SuspendLayout();
             SuspendLayout();
             // 
             // formUsuario
@@ -70,7 +71,7 @@
             formUsuario.Name = "formUsuario";
             formUsuario.Padding = new Padding(1, 51, 1, 1);
             formUsuario.Sizable = true;
-            formUsuario.Size = new Size(808, 451);
+            formUsuario.Size = new Size(808, 526);
             formUsuario.TabIndex = 0;
             formUsuario.Text = "Usuário";
             formUsuario.TextColor = Color.FromArgb(234, 234, 234);
@@ -82,6 +83,7 @@
             gpxUsuario.ArrowColorH = Color.Black;
             gpxUsuario.BackColor = Color.White;
             gpxUsuario.BaseColor = Color.DimGray;
+            gpxUsuario.Controls.Add(btnEditar);
             gpxUsuario.Controls.Add(dgvUsuarios);
             gpxUsuario.Controls.Add(gpx);
             gpxUsuario.Controls.Add(btnCancelar);
@@ -93,9 +95,35 @@
             gpxUsuario.Name = "gpxUsuario";
             gpxUsuario.ShowArrow = true;
             gpxUsuario.ShowText = true;
-            gpxUsuario.Size = new Size(784, 398);
+            gpxUsuario.Size = new Size(784, 465);
             gpxUsuario.TabIndex = 0;
             gpxUsuario.TextColor = Color.FromArgb(35, 168, 109);
+            // 
+            // btnEditar
+            // 
+            btnEditar.BackColor = Color.Transparent;
+            btnEditar.BaseColor = Color.Teal;
+            btnEditar.Font = new Font("Segoe UI", 12F);
+            btnEditar.Location = new Point(190, 228);
+            btnEditar.Name = "btnEditar";
+            btnEditar.Rounded = false;
+            btnEditar.Size = new Size(113, 44);
+            btnEditar.TabIndex = 7;
+            btnEditar.Text = "Editar";
+            btnEditar.TextColor = Color.FromArgb(243, 243, 243);
+            btnEditar.Click += btnEditar_Click;
+            // 
+            // dgvUsuarios
+            // 
+            dgvUsuarios.BackgroundColor = Color.DarkGray;
+            dgvUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvUsuarios.GridColor = Color.LightSlateGray;
+            dgvUsuarios.Location = new Point(36, 278);
+            dgvUsuarios.Name = "dgvUsuarios";
+            dgvUsuarios.RowHeadersWidth = 62;
+            dgvUsuarios.Size = new Size(707, 160);
+            dgvUsuarios.TabIndex = 6;
+            dgvUsuarios.CellClick += dgvUsuarios_CellClick;
             // 
             // gpx
             // 
@@ -243,10 +271,10 @@
             btnCancelar.BackColor = Color.Transparent;
             btnCancelar.BaseColor = Color.Teal;
             btnCancelar.Font = new Font("Segoe UI", 12F);
-            btnCancelar.Location = new Point(604, 228);
+            btnCancelar.Location = new Point(615, 228);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Rounded = false;
-            btnCancelar.Size = new Size(139, 44);
+            btnCancelar.Size = new Size(107, 44);
             btnCancelar.TabIndex = 4;
             btnCancelar.Text = "Cancelar";
             btnCancelar.TextColor = Color.FromArgb(243, 243, 243);
@@ -256,10 +284,10 @@
             btnExcluir.BackColor = Color.Transparent;
             btnExcluir.BaseColor = Color.Teal;
             btnExcluir.Font = new Font("Segoe UI", 12F);
-            btnExcluir.Location = new Point(417, 228);
+            btnExcluir.Location = new Point(475, 228);
             btnExcluir.Name = "btnExcluir";
             btnExcluir.Rounded = false;
-            btnExcluir.Size = new Size(158, 44);
+            btnExcluir.Size = new Size(105, 44);
             btnExcluir.TabIndex = 3;
             btnExcluir.Text = "Excluir";
             btnExcluir.TextColor = Color.FromArgb(243, 243, 243);
@@ -272,7 +300,7 @@
             btnNovo.Location = new Point(40, 228);
             btnNovo.Name = "btnNovo";
             btnNovo.Rounded = false;
-            btnNovo.Size = new Size(160, 44);
+            btnNovo.Size = new Size(116, 44);
             btnNovo.TabIndex = 2;
             btnNovo.Text = "Novo";
             btnNovo.TextColor = Color.FromArgb(243, 243, 243);
@@ -283,10 +311,10 @@
             btnSalvar.BackColor = Color.Transparent;
             btnSalvar.BaseColor = Color.Teal;
             btnSalvar.Font = new Font("Segoe UI", 12F);
-            btnSalvar.Location = new Point(230, 228);
+            btnSalvar.Location = new Point(341, 228);
             btnSalvar.Name = "btnSalvar";
             btnSalvar.Rounded = false;
-            btnSalvar.Size = new Size(153, 44);
+            btnSalvar.Size = new Size(97, 44);
             btnSalvar.TabIndex = 1;
             btnSalvar.Text = "Salvar";
             btnSalvar.TextColor = Color.FromArgb(243, 243, 243);
@@ -306,33 +334,23 @@
             btnVoltar.TextColor = Color.FromArgb(243, 243, 243);
             btnVoltar.Click += btnVoltar_Click;
             // 
-            // dgvUsuarios
-            // 
-            dgvUsuarios.BackgroundColor = Color.DarkGray;
-            dgvUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvUsuarios.GridColor = Color.LightSlateGray;
-            dgvUsuarios.Location = new Point(36, 278);
-            dgvUsuarios.Name = "dgvUsuarios";
-            dgvUsuarios.RowHeadersWidth = 62;
-            dgvUsuarios.Size = new Size(707, 98);
-            dgvUsuarios.TabIndex = 6;
-            // 
             // FrmUsuario
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(808, 451);
+            ClientSize = new Size(808, 526);
             Controls.Add(formUsuario);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FrmUsuario";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmUsuario";
             TransparencyKey = Color.Fuchsia;
+            Load += FrmUsuario_Load;
             formUsuario.ResumeLayout(false);
             gpxUsuario.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvUsuarios).EndInit();
             gpx.ResumeLayout(false);
             gpx.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvUsuarios).EndInit();
             ResumeLayout(false);
         }
 
@@ -355,5 +373,6 @@
         private ReaLTaiizor.Controls.ForeverLabel labelSenha;
         private ReaLTaiizor.Controls.ForeverTextBox txtSenha;
         private DataGridView dgvUsuarios;
+        private ReaLTaiizor.Controls.ForeverButtonSticky btnEditar;
     }
 }

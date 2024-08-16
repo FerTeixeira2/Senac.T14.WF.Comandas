@@ -103,6 +103,7 @@
             // 
             btnEditar.BackColor = Color.Transparent;
             btnEditar.BaseColor = Color.Teal;
+            btnEditar.Enabled = false;
             btnEditar.Font = new Font("Segoe UI", 12F);
             btnEditar.Location = new Point(190, 228);
             btnEditar.Name = "btnEditar";
@@ -270,6 +271,7 @@
             // 
             btnCancelar.BackColor = Color.Transparent;
             btnCancelar.BaseColor = Color.Teal;
+            btnCancelar.Enabled = false;
             btnCancelar.Font = new Font("Segoe UI", 12F);
             btnCancelar.Location = new Point(615, 228);
             btnCancelar.Name = "btnCancelar";
@@ -278,11 +280,13 @@
             btnCancelar.TabIndex = 4;
             btnCancelar.Text = "Cancelar";
             btnCancelar.TextColor = Color.FromArgb(243, 243, 243);
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // btnExcluir
             // 
             btnExcluir.BackColor = Color.Transparent;
             btnExcluir.BaseColor = Color.Teal;
+            btnExcluir.Enabled = false;
             btnExcluir.Font = new Font("Segoe UI", 12F);
             btnExcluir.Location = new Point(475, 228);
             btnExcluir.Name = "btnExcluir";
@@ -291,6 +295,7 @@
             btnExcluir.TabIndex = 3;
             btnExcluir.Text = "Excluir";
             btnExcluir.TextColor = Color.FromArgb(243, 243, 243);
+            btnExcluir.Click += btnExcluir_Click;
             // 
             // btnNovo
             // 
@@ -310,6 +315,7 @@
             // 
             btnSalvar.BackColor = Color.Transparent;
             btnSalvar.BaseColor = Color.Teal;
+            btnSalvar.Enabled = false;
             btnSalvar.Font = new Font("Segoe UI", 12F);
             btnSalvar.Location = new Point(341, 228);
             btnSalvar.Name = "btnSalvar";

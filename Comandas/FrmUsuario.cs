@@ -50,6 +50,12 @@ namespace Comandas
             desabilitarCampos();
             ListarUsuarios();
             limparCampos();
+
+            btnNovo.Enabled = true;
+            btnEditar.Enabled = false;
+            btnSalvar.Enabled = false;
+            btnExcluir.Enabled = false;
+            btnCancelar.Enabled = false;
         }
 
 
@@ -122,6 +128,11 @@ namespace Comandas
             //indica que esta editando um usuario
             ehNovo = false;
             habilitarCampos();
+            btnNovo.Enabled = false;
+            btnEditar.Enabled = false;
+            btnSalvar.Enabled = true;
+            btnExcluir.Enabled = false;
+            btnCancelar.Enabled = true;
         }
 
         private void FrmUsuario_Load(object sender, EventArgs e)
@@ -145,7 +156,7 @@ namespace Comandas
         {
             //verrifica se o indice da linha eh maior ou igual a 0
             //saber se existe uma linha selecionada 
-            if(e.RowIndex >= 0)
+            if (e.RowIndex >= 0)
             {
                 //mensagem "Linha selecionada 1"
                 //MessageBox.Show("Linha selecionada " + (e.RowIndex + 1));
@@ -160,6 +171,58 @@ namespace Comandas
                 txtNome.Text = nome;
                 txtEmail.Text = email;
                 txtSenha.Text = senha;
+
+                btnEditar.Enabled = true;
+                btnNovo.Enabled = false;
+                btnSalvar.Enabled = false;
+                btnCancelar.Enabled = false;
+                btnExcluir.Enabled = true;
+            }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            limparCampos();
+            btnNovo.Enabled = true;
+            btnEditar.Enabled = false;
+            btnSalvar.Enabled = false;
+            btnExcluir.Enabled = false;
+            btnCancelar.Enabled = false;
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            //obtem o id do usuário da tela
+            var idUsuario = Convert.ToInt32(txtId.Text);
+            //chama o método que exclui da tabela usuario
+            ExcluirUsuario(idUsuario);
+            ListarUsuarios();
+            limparCampos();
+            btnNovo.Enabled = true;
+            btnEditar.Enabled = false;
+            btnSalvar.Enabled = false;
+            btnExcluir.Enabled = false;
+            btnCancelar.Enabled = false;
+            MessageBox.Show("Usuário excluido com sucesso!");
+        }
+
+        private void ExcluirUsuario(int idUsuario)
+        {
+            //conectar no banco de dados
+            using (var banco = new AppDbContext())
+            {
+                //consultar o usuario
+                //SELECT * FROM usuarios WHERE id = ?  a escrita abaixo eh em C# mas com a mesma função escrita nessa linha
+                var usuario = banco.Usuarios.First(u => u.Id.Equals(idUsuario));
+
+                //avisar o banco que estou excluindo
+                //DELETE FROM usuario WHERE id = ?
+                //variável, coleção, método               !!!!!!!!!!!!IMPORTANTE !!!!!!!!!!!!!!
+                banco.Usuarios.Remove(usuario);
+
+                //confirmar a exclusão
+                //COMMIT
+                banco.SaveChanges();
             }
         }
     }

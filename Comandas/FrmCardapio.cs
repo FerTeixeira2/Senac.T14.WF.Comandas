@@ -15,11 +15,38 @@ namespace Comandas
         public FrmCardapio()
         {
             InitializeComponent();
+            ListarCardapios();
+        }
+
+        private void ListarCardapios()
+        {
+            using (var banco = new AppDbContext()) 
+            {
+                var cardapios = banco.Cardapios.ToList();
+                dgvCardapio.DataSource = cardapios;
+            }
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btnNovoItem_Click(object sender, EventArgs e)
+        {
+            var ehNovo = true;
+            new FrmCardapioCad(ehNovo).ShowDialog();
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            var ehNovo = false;
+            new FrmCardapioCad(ehNovo).ShowDialog();
         }
     }
 }

@@ -8,9 +8,10 @@ namespace Comandas
     {
         //propriedade que representa a tebela Usuarios
         public DbSet<Usuario> Usuarios { get; set; }
+        public DbSet<Cardapio> Cardapios { get; set; }
 
-    //metodo que configura informando para o EF que o banco sera SQlite
-    protected override void OnConfiguring(DbContextOptionsBuilder
+        //metodo que configura informando para o EF que o banco sera SQlite
+        protected override void OnConfiguring(DbContextOptionsBuilder
        optionsBuilder)
         {
             optionsBuilder.UseSqlite("Data Source=comandas.db");

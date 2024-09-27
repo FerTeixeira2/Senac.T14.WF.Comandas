@@ -114,11 +114,13 @@
             dgvCardapio.RowHeadersWidth = 62;
             dgvCardapio.Size = new Size(735, 250);
             dgvCardapio.TabIndex = 4;
+            dgvCardapio.CellClick += dgvCardapio_CellClick;
             // 
             // btnEditar
             // 
             btnEditar.BackColor = Color.Transparent;
             btnEditar.BaseColor = Color.Teal;
+            btnEditar.Enabled = false;
             btnEditar.Font = new Font("Segoe UI", 12F);
             btnEditar.Location = new Point(551, 326);
             btnEditar.Name = "btnEditar";
@@ -133,6 +135,7 @@
             // 
             btnExcluir.BackColor = Color.Transparent;
             btnExcluir.BaseColor = Color.DarkRed;
+            btnExcluir.Enabled = false;
             btnExcluir.Font = new Font("Segoe UI", 12F);
             btnExcluir.Location = new Point(662, 326);
             btnExcluir.Name = "btnExcluir";

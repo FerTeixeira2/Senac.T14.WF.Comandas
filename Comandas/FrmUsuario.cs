@@ -225,5 +225,10 @@ namespace Comandas
                 banco.SaveChanges();
             }
         }
+
+        private void dgvUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

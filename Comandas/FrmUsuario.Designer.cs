@@ -71,7 +71,7 @@
             formUsuario.Name = "formUsuario";
             formUsuario.Padding = new Padding(1, 51, 1, 1);
             formUsuario.Sizable = true;
-            formUsuario.Size = new Size(808, 526);
+            formUsuario.Size = new Size(936, 602);
             formUsuario.TabIndex = 0;
             formUsuario.Text = "Usuário";
             formUsuario.TextColor = Color.FromArgb(234, 234, 234);
@@ -91,11 +91,11 @@
             gpxUsuario.Controls.Add(btnNovo);
             gpxUsuario.Controls.Add(btnSalvar);
             gpxUsuario.Font = new Font("Segoe UI", 10F);
-            gpxUsuario.Location = new Point(12, 49);
+            gpxUsuario.Location = new Point(4, 49);
             gpxUsuario.Name = "gpxUsuario";
             gpxUsuario.ShowArrow = true;
             gpxUsuario.ShowText = true;
-            gpxUsuario.Size = new Size(784, 465);
+            gpxUsuario.Size = new Size(928, 549);
             gpxUsuario.TabIndex = 0;
             gpxUsuario.TextColor = Color.FromArgb(35, 168, 109);
             // 
@@ -105,7 +105,7 @@
             btnEditar.BaseColor = Color.Teal;
             btnEditar.Enabled = false;
             btnEditar.Font = new Font("Segoe UI", 12F);
-            btnEditar.Location = new Point(190, 228);
+            btnEditar.Location = new Point(206, 228);
             btnEditar.Name = "btnEditar";
             btnEditar.Rounded = false;
             btnEditar.Size = new Size(113, 44);
@@ -122,7 +122,7 @@
             dgvUsuarios.Location = new Point(36, 278);
             dgvUsuarios.Name = "dgvUsuarios";
             dgvUsuarios.RowHeadersWidth = 62;
-            dgvUsuarios.Size = new Size(707, 160);
+            dgvUsuarios.Size = new Size(858, 247);
             dgvUsuarios.TabIndex = 6;
             dgvUsuarios.CellClick += dgvUsuarios_CellClick;
             dgvUsuarios.CellContentClick += dgvUsuarios_CellContentClick;
@@ -146,7 +146,7 @@
             gpx.Name = "gpx";
             gpx.ShowArrow = true;
             gpx.ShowText = true;
-            gpx.Size = new Size(749, 228);
+            gpx.Size = new Size(892, 228);
             gpx.TabIndex = 5;
             gpx.TextColor = Color.FromArgb(35, 168, 109);
             // 
@@ -274,7 +274,7 @@
             btnCancelar.BaseColor = Color.Teal;
             btnCancelar.Enabled = false;
             btnCancelar.Font = new Font("Segoe UI", 12F);
-            btnCancelar.Location = new Point(615, 228);
+            btnCancelar.Location = new Point(731, 228);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Rounded = false;
             btnCancelar.Size = new Size(107, 44);
@@ -289,7 +289,7 @@
             btnExcluir.BaseColor = Color.Teal;
             btnExcluir.Enabled = false;
             btnExcluir.Font = new Font("Segoe UI", 12F);
-            btnExcluir.Location = new Point(475, 228);
+            btnExcluir.Location = new Point(557, 228);
             btnExcluir.Name = "btnExcluir";
             btnExcluir.Rounded = false;
             btnExcluir.Size = new Size(105, 44);
@@ -318,7 +318,7 @@
             btnSalvar.BaseColor = Color.Teal;
             btnSalvar.Enabled = false;
             btnSalvar.Font = new Font("Segoe UI", 12F);
-            btnSalvar.Location = new Point(341, 228);
+            btnSalvar.Location = new Point(390, 228);
             btnSalvar.Name = "btnSalvar";
             btnSalvar.Rounded = false;
             btnSalvar.Size = new Size(97, 44);
@@ -345,7 +345,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(808, 526);
+            ClientSize = new Size(936, 602);
             Controls.Add(formUsuario);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FrmUsuario";

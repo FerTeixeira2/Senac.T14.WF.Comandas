@@ -12,11 +12,12 @@ namespace Comandas
 {
     public partial class FrmCardapio : Form
     {
-        public int ID { get; private set; }
-        public string? TITULO { get; private set; }
-        public string? DESCRICAO { get; private set; }
-        public decimal PRECO { get; private set; }
-        public bool POSSUI_PREPARO { get; private set; }
+        //variaveis locais
+        public int ID { get; set; }
+        public string? TITULO { get; set; }
+        public string? DESCRICAO { get; set; }
+        public decimal PRECO { get; set; }
+        public bool POSSUI_PREPARO { get; set; }
 
         public FrmCardapio()
         {
@@ -24,7 +25,7 @@ namespace Comandas
             ListarCardapios();
         }
 
-        private void ListarCardapios()
+        public void ListarCardapios()
         {
             using (var banco = new AppDbContext())
             {
@@ -41,18 +42,60 @@ namespace Comandas
         private void btnNovoItem_Click(object sender, EventArgs e)
         {
             var ehNovo = true;
-            new FrmCardapioCad(ehNovo).ShowDialog();
+            new FrmCardapioCad(ehNovo, this).ShowDialog();
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
+        {   
+            //exibe uma mensagem de confirmação para o usuario
+            var result = MessageBox.Show(
+                $"Você realmente deseja excluir {TITULO} ?", 
+                "Excluir Cardápio", 
+                MessageBoxButtons.YesNo, 
+                MessageBoxIcon.Question);
+
+            //se o usuario clicou em não, para o método
+            if (result == DialogResult.No)
+            {
+                //para o método
+                return;
+            }
+            
+            //chamar o método excluir
+            if(ExcluirCardapio(ID))
+            {
+                //atualza a tabela
+                ListarCardapios();
+                //exibe a mensagem
+                MessageBox.Show($"Cardápio '{TITULO}' excluído com sucesso!");
+                //desabilida o botão excluir
+                btnExcluir.Enabled = false;
+            }
+        }
+
+        private bool ExcluirCardapio(int iD)
         {
+            //conectar no banco
+            using(var banco = new AppDbContext())
+            {
+                //buscar o cardápio através do id
+                //SELECT * FROM Cardapio WHERE id = @id
+                var card = banco.Cardapios.First(c => c.Id == iD);
+
+                //avisar o banco que vai excluir 
+                banco.Cardapios.Remove(card);
+
+                //confirmar a exclusão(ação)
+                banco.SaveChanges();
+            }
+            return true;
 
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
             var ehNovo = false;
-            new FrmCardapioCad(ehNovo, ID, TITULO, DESCRICAO, PRECO, POSSUI_PREPARO).ShowDialog();
+            new FrmCardapioCad(ehNovo, ID, TITULO, DESCRICAO, PRECO, POSSUI_PREPARO, this).ShowDialog();
         }
 
         private void dgvCardapio_CellClick(object sender, DataGridViewCellEventArgs e)
